@@ -1,14 +1,16 @@
-const getRandomDadJoke = async() => {
-    url = "https://icanhazdadjoke.com/";
+ const getRandomDadJoke = async() => {
+   /*const  url = "https://icanhazdadjoke.com/";
     const jokeStream = await fetch(url, {
         headers: {
             Accept: "application/json"
         }
-    });
-    const jsonJoke = await jokeStream.json()
+    }); */
+    const url = "/.netlify/functions/jokes";
+    const jokeStream = await fetch (url);
+    const jsonJoke = await jokeStream.json();
     const joke = jsonJoke.joke
     return joke;
-    };
+};
 
 const displayJoke = (joke) => {
     const h1 = document.querySelector('h1');
